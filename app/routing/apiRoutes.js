@@ -48,4 +48,4 @@ function convertAnswers(currentFriend) {
 		curAnswers[i] = parseInt(curAnswers[i]);
 	}
 
-} // END convertAnswers()
+}

@@ -1,11 +1,12 @@
 var friends = require("../data/friends.js");
+var path = require("path");
 
 
 // Export API routes
 module.exports = function(app) {
 
 	// Total json list of friend entries
-	app.get('/api/friends', function(req, res) {
+	app.get("/api/friends", function(req, res) {
 		res.json(friends);
     });
     
@@ -13,21 +14,24 @@ module.exports = function(app) {
     app.post("/api/friends", function(req, res) {
         var friendInput = req.body;
         // var userResponses = userInput.scores;
-        res.json(true);
+        // res.json(true);
 
         console.log("\nName: " + friendInput.name + "\nPhoto: " +
         friendInput.photo + "\nScores: " + friendInput.answers);
 
-        friendInput.answers = friendInput.answers.split(",");
-
 		friends.push(friendInput);
 		convertAnswers(friendInput);
-		// console.log(friendInput.answers);
+        // console.log(friendInput.answers);
+        
+        compareFriends(friends, friendInput);
+		// console.log(friendInput);
+
+		res.json(friendInput);
     });
 }
 
 // New friend object using the name, photo link, and an array of the answers
-function NewFriend(name, photo, answers) {
+function newFriend(name, photo, answers) {
 	this.name = name;
 	this.photo = photo;
 	this.answers = answers;
@@ -35,7 +39,6 @@ function NewFriend(name, photo, answers) {
 
 
 function convertAnswers(currentFriend) {
-	// variable to hold the current friend
 	var current = currentFriend;
 	// console.log(current);
 
@@ -68,14 +71,14 @@ function compareFriends(allFriends, currentFriend) {
 			var qScore = Math.abs(curFriend[j] - matchFriend[j]);
 			// the total match score is equal to the sum of all qScores
 			matchScore += qScore;
-		} // End of scoring for loop
+		}
 		// console.log(matchScore)
 
 		// push this friends matchScore into an array
 		matchScores.push(matchScore);
 		// reset the matchScore to zero before moving to the next friend
 		matchScore = 0;
-	} // END of main for loop
+	}
 	// console.log(matchScores)
 
 	// Find lowest score in matchScores array

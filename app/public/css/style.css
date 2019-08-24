@@ -1,0 +1,22 @@
+.jumbotron {
+    background-image: url(https://images.alphacoders.com/546/546898.jpg);
+    opacity: 0.8;
+    background-size: cover;
+    background-position:center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* home.html */
+
+.jumbotron h1 {
+    text-align: center;
+}
+
+.fa-bolt {
+    color: rgb(199, 199, 8);
+}
+
+
+/* survey.html */
+

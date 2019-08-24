@@ -20,3 +20,11 @@
 
 /* survey.html */
 
+.modal-content {
+    width: 535px;
+}
+
+img #match-img {
+    margin: 0 auto;
+    text-align: center;
+}

@@ -15,8 +15,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Server Routing Map 
-apiRoutes(app); // API route - Must be listed first due to the HTML default catch all "use" route
-htmlRoutes(app); // HTML route 
+apiRoutes(app);
+// API route - Must be listed first due to the HTML default catch all "use" route
+
+htmlRoutes(app); 
+// HTML route 
 
 // Start listening on PORT
 app.listen(PORT, function() {

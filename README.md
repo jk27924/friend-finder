@@ -46,10 +46,13 @@ Please check out the deployed app on Heroku [here](https://finding-my-harry.hero
 ## Screenshots of App
 
 ### 01_Home Screen
-<img src=".png">
+<img src="01-home-screen.png">
 
-### 02_Survey Screen
-<img src=".png">
+### 02_Survey Screen with Drop Down
+<img src="02-survey-screen-01.png">
 
-### 03_Friend Matched
-<img src=".png">
+### 03_Survey Screen with Submit Button
+<img src="03-survey-screen-02.png">
+
+### 04_Best Match
+<img src="04-best-match.png">

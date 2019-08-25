@@ -13,18 +13,14 @@ module.exports = function(app) {
     // Post request used for survey
     app.post("/api/friends", function(req, res) {
         var friendInput = req.body;
-        // var userResponses = userInput.scores;
-        // res.json(true);
 
         console.log("\nName: " + friendInput.name + "\nPhoto: " +
         friendInput.photo + "\nScores: " + friendInput.answers);
 
 		friends.push(friendInput);
 		convertAnswers(friendInput);
-        // console.log(friendInput.answers);
         
         compareFriends(friends, friendInput);
-		// console.log(friendInput);
 
 		res.json(friendInput);
     });
@@ -40,7 +36,6 @@ function newFriend(name, photo, answers) {
 
 function convertAnswers(currentFriend) {
 	var current = currentFriend;
-	// console.log(current);
 
 	var curAnswers = current.answers; // holds answers
 
@@ -58,40 +53,34 @@ function compareFriends(allFriends, currentFriend) {
 	var matchScore = 0;
 	var closestMatch;
 
-	// for each friend (excluding last added)...
+	// for each friend (excluding last added)
 	for (i=0; i<allFriends.length-1; i++) {
-		// store all the scores in an array...
+		// store all the scores in an array
 		matchFriend = allFriends[i].answers;
-		// console.log(matchFriend);
 
-		// for each answer in an array...
 		for (j=0; j<matchFriend.length; j++) {
-			// store the abs value of the difference between the answers of
+
 			// the new friend and this friend in the array
 			var qScore = Math.abs(curFriend[j] - matchFriend[j]);
 			// the total match score is equal to the sum of all qScores
 			matchScore += qScore;
 		}
-		// console.log(matchScore)
 
 		// push this friends matchScore into an array
 		matchScores.push(matchScore);
 		// reset the matchScore to zero before moving to the next friend
 		matchScore = 0;
 	}
-	// console.log(matchScores)
 
 	// Find lowest score in matchScores array
 	var lowestScore = Math.min(...matchScores);
-	// console.log(lowestScore);
 
 	// find the index of the lowest score
 	var matchIndex = matchScores.indexOf(lowestScore);
-	// console.log(matchIndex);
+
 	// find the friend at this index in the allFriends array
 	var bestFriend = allFriends[matchIndex];
 
 	// add a new property to the current friend's object that holds the best match
 	currentFriend.bestie = bestFriend;
-	// console.log(currentFriend);
 }

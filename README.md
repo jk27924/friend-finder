@@ -5,7 +5,7 @@
 FRIEND FINDER is a Full Stack web application based on Express and node.js. It is compatibility-based application -- basically a dating app. The application finds the best matching friend with closest personality by displaying a name and a photo according to the survey results. The user will provide answers to the survey in a scale from 1 (Strongly Disagree) to 5 (Strongly Agree) to find a best matching friend.
 <br>
 <br>
-Please check out the deployed app on Heroku [here](https://finding-bf.herokuapp.com/)!
+Please check out the deployed app on Heroku [here](https://harry-potter-and-friend-finder.herokuapp.com/)!
 
 
 ## Technologies Used

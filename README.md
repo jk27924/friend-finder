@@ -3,7 +3,9 @@
 
 ## Overview
 FRIEND FINDER is a Full Stack web application based on Express and node.js. It is compatibility-based application -- basically a dating app. The application finds the best matching friend with closest personality by displaying a name and a photo according to the survey results. The user will provide answers to the survey in a scale from 1 (Strongly Disagree) to 5 (Strongly Agree) to find a best matching friend.
-Please check out the deployed app on Heroku [here](https://finding-my-harry.herokuapp.com/)!
+<br>
+<br>
+Please check out the deployed app on Heroku [here](https://finding-bf.herokuapp.com/)!
 
 
 ## Technologies Used
@@ -46,13 +48,13 @@ Please check out the deployed app on Heroku [here](https://finding-my-harry.hero
 ## Screenshots of App
 
 ### 01_Home Screen
-<img src="01-home-screen.png">
+<img src="app/public/images/01-home-screen.png">
 
 ### 02_Survey Screen with Drop Down
-<img src="02-survey-screen-01.png">
+<img src="app/public/images/02-survey-screen-01.png">
 
 ### 03_Survey Screen with Submit Button
-<img src="03-survey-screen-02.png">
+<img src="app/public/images/03-survey-screen-02.png">
 
 ### 04_Best Match
-<img src="04-best-match.png">
+<img src="app/public/images/04-best-match.png">
